@@ -1,0 +1,53 @@
+class Fractions:
+    def __init__(self, k):
+        self.chis=[]
+        self.povtor=0
+        self.k=k
+        self.n=0
+        self.a=0
+        self.max=0
+        self.min=100000000000000
+        self.minz=100000000000000
+    def chisla(self):
+        for i in range(1, self.k+1):
+            print('Число' + ' ' + str(i) + ':' + ' ', end='')
+            self.n = int(input())
+            self.chis.append(self.n)
+    def drobi(self):
+        for i in range(len(self.chis)):
+            for j in range(len(self.chis)):
+                if self.chis[i-1] != self.chis[i] and self.chis[j-1] != self.chis[j] != 0:
+                    print(str(self.chis[i]) + '/' + str(self.chis[j]))
+    def zelie(self):
+        for i in range(len(self.chis)):
+            for j in range(len(self.chis)):
+                if self.chis[j] != 0:
+                    if self.chis[i] % self.chis[j] == 0:
+                        print(str(self.chis[i]) + '/' + str(self.chis[j]))
+    def maxi(self):
+        for i in range(len(self.chis)):
+            if self.chis[i] > self.max and self.chis[i] != self.max:
+                self.max = self.chis[i]
+            if self.chis[i] < self.min and self.chis[i] != self.min:
+                self.min = self.chis[i]
+        print(str(self.max) + '/' + str(self.min))
+    def mini(self):
+        for i in range(len(self.chis)):
+            if self.chis[i] < self.minz and self.chis[i] != 0:
+                self.minz = self.chis[i]
+            if self.chis[i] > self.max :
+                self.max = self.chis[i]
+        print(str(self.minz) + '/' + str(self.max))
+print('Введите К целых чисел:')
+k = int(input())
+f=Fractions(k)
+f.chisla()
+print('Все возможные различные дроби: ')
+f.drobi()
+print('Только целые числа:')
+f.zelie()
+print('Максимальная и минимальная дроби: ')
+print('Максимальная дробь:')
+f.maxi()
+print('Минимальная дробь: ')
+f.mini() 
