@@ -33,10 +33,11 @@ class Fractions:
         print(str(self.max) + '/' + str(self.min))
     def mini(self):
         for i in range(len(self.chis)):
-            if self.chis[i] < self.minz and self.chis[i] != 0:
-                self.minz = self.chis[i]
-            if self.chis[i] > self.max :
-                self.max = self.chis[i]
+            for j in range(len(self.chis)):
+                if self.chis[i] < self.minz:
+                    self.minz = self.chis[i]
+                if self.chis[j] > self.max and self.chis[j] != 0:
+                    self.max = self.chis[j]
         print(str(self.minz) + '/' + str(self.max))
 print('Введите К целых чисел:')
 k = int(input())
