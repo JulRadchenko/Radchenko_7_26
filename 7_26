@@ -21,7 +21,7 @@ class Fractions:
     def zelie(self):
         for i in range(len(self.chis)):
             for j in range(len(self.chis)):
-                if self.chis[j] != 0:
+                if self.chis[i-1] != self.chis[i] and self.chis[j-1] != self.chis[j] != 0:
                     if self.chis[i] % self.chis[j] == 0:
                         print(str(self.chis[i]) + '/' + str(self.chis[j]))
     def maxi(self):
